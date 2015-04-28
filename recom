@@ -1,0 +1,14 @@
+#!/bin/sh
+# Juan Vidal Alegría
+
+case $# in
+  1)
+    git add . | git commit -m "$1" | git push -uf origin
+
+    exit 0;;
+  2)
+    git add . | git commit -m "$1" | git push -uf $2
+    exit 0;;
+  *)
+    exit 1;;
+esac
